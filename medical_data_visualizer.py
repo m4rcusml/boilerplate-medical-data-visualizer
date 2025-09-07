@@ -67,15 +67,15 @@ def draw_heat_map():
         'overweight']
     ].corr()
 
-    # 13
+    # 13 - criando a mask
     mask = np.triu(np.ones_like(corr, dtype=bool))
 
-    # 14
+    # 14 - cria a figura
     fig, ax = plt.subplots(figsize=(10, 10))
 
-    # 15
+    # 15 - cria o grafico heatmap
     sns.heatmap(corr, mask=mask, annot=True, fmt='.1f', linewidths=.5, ax=ax, cmap='coolwarm')
 
-    # 16
+    # 16 salva o grafico
     fig.savefig('heatmap.png')
     return fig
